@@ -127,9 +127,7 @@ module ex(
     assign op1_ge_op2_unsigned = op1_i >= op2_i;
     assign op1_eq_op2 = (op1_i == op2_i);
 
-    // assign mul_temp = mul_op1 * mul_op2; 
-    assign mul_temp = 64'b0; //没有要求实现乘法器，注释掉为了时序不违例
-
+    assign mul_temp = mul_op1 * mul_op2; 
     assign mul_temp_invert = ~mul_temp + 1;
 
     assign mem_raddr_index = (reg1_rdata_i + {{20{inst_i[31]}}, inst_i[31:20]}) & 2'b11;
